@@ -926,18 +926,6 @@ img { max-width: 100%; display: block; }
   }
   .nav-links.open {
     display: flex;
-  }
-  .nav-links.open::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
-    z-index: -1;
-  }
-  .nav-links.open {
-    background: transparent;
-  }
-  .nav-links.open {
     background: var(--bg-card);
     border: 1px solid rgba(255,255,255,0.08);
     border-radius: var(--radius);
@@ -946,6 +934,11 @@ img { max-width: 100%; display: block; }
     width: calc(100% - 48px);
     box-shadow: 0 24px 64px rgba(0,0,0,0.5);
     gap: 8px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
   }
   .nav-links.open li {
     list-style: none;
