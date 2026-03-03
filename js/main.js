@@ -4,7 +4,6 @@
 
 function init() {
   initHeader();
-  initMobileMenu();
   initContactForm();
   initActiveNav();
   initScrollReveal();
@@ -63,47 +62,6 @@ function initHeader() {
 
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
-}
-
-// Mobile menu toggle (burger + navLinks)
-function initMobileMenu() {
-  const burger = document.getElementById('burger');
-  const navLinks = document.getElementById('navLinks');
-  if (!burger || !navLinks) return;
-
-  function toggleMenu() {
-    const isOpen = navLinks.classList.toggle('open');
-    burger.classList.toggle('open', isOpen);
-    document.body.classList.toggle('menu-open', isOpen);
-    burger.setAttribute('aria-expanded', isOpen);
-  }
-
-  burger.addEventListener('click', (e) => {
-    e.preventDefault();
-    toggleMenu();
-  });
-  burger.addEventListener('touchstart', (e) => {
-    e.preventDefault();
-    toggleMenu();
-  }, { passive: false });
-
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      burger.classList.remove('open');
-      document.body.classList.remove('menu-open');
-      burger.setAttribute('aria-expanded', 'false');
-    });
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      navLinks.classList.remove('open');
-      burger.classList.remove('open');
-      document.body.classList.remove('menu-open');
-      burger.setAttribute('aria-expanded', 'false');
-    }
-  });
 }
 
 // Contact form - prepare mailto with form data

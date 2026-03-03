@@ -241,6 +241,12 @@ img { max-width: 100%; display: block; }
   min-height: 44px;
   align-items: center;
   justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
 }
 .burger span {
   width: 26px;

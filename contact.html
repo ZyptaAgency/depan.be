@@ -33,7 +33,7 @@
         0477 03 00 01
       </a></li>
     </ul>
-    <div class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></div>
+    <button type="button" class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
@@ -145,6 +145,7 @@
 
 <script src="js/main.js"></script>
 <script>
+  (function(){var b=document.getElementById('burger');var n=document.getElementById('navLinks');if(b&&n){b.onclick=function(e){e.preventDefault();n.classList.toggle('open');b.classList.toggle('open',n.classList.contains('open'));document.body.classList.toggle('menu-open',n.classList.contains('open'));};n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){n.classList.remove('open');b.classList.remove('open');document.body.classList.remove('menu-open');});});}})();
   window.addEventListener('scroll', () => {
     const p = document.getElementById('scrollProgress');
     if (p) p.style.width = Math.min(100, (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100) + '%';
