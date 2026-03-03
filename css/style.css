@@ -82,6 +82,10 @@ img { max-width: 100%; display: block; }
   0%, 100% { box-shadow: 0 0 20px var(--orange-glow), 0 0 60px transparent; }
   50% { box-shadow: 0 0 30px var(--orange-glow), 0 0 80px var(--orange-glow); }
 }
+@keyframes pulse-glow-blue {
+  0%, 100% { box-shadow: 0 0 20px rgba(24, 119, 242, 0.4), 0 0 60px transparent; }
+  50% { box-shadow: 0 0 30px rgba(24, 119, 242, 0.6), 0 0 80px rgba(24, 119, 242, 0.3); }
+}
 
 @keyframes slide-up {
   from { opacity: 0; transform: translateY(60px); }
@@ -198,6 +202,7 @@ img { max-width: 100%; display: block; }
   transition: all 0.3s ease;
   letter-spacing: 0.02em;
   white-space: nowrap;
+  animation: pulse-glow 3s infinite;
 }
 .nav-cta:hover {
   background: var(--orange-light);
@@ -218,6 +223,7 @@ img { max-width: 100%; display: block; }
   color: var(--white) !important;
   border-radius: 12px;
   transition: all 0.3s ease;
+  animation: pulse-glow-blue 3s infinite;
 }
 .nav-facebook-label { display: none; }
 .nav-facebook:hover {
@@ -320,6 +326,8 @@ img { max-width: 100%; display: block; }
 .hero-badge {
   display: inline-flex;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 8px;
   background: rgba(255, 107, 43, 0.1);
   border: 1px solid rgba(255, 107, 43, 0.2);
@@ -338,6 +346,15 @@ img { max-width: 100%; display: block; }
   animation: pulse-glow 2s infinite;
   box-shadow: 0 0 8px #22c55e88;
 }
+.hero-badge .badge-logo {
+  height: 20px;
+  width: auto;
+  vertical-align: middle;
+  margin: 0 4px;
+  object-fit: contain;
+}
+.hero-badge .badge-logo-ag { height: 18px; }
+.hero-badge .badge-logo-europ { height: 22px; }
 .hero h1 {
   font-family: var(--font-display);
   font-size: clamp(3rem, 7vw, 5.5rem);
@@ -555,6 +572,21 @@ img { max-width: 100%; display: block; }
   letter-spacing: -0.03em;
   line-height: 1.15;
 }
+.section-header .assurance-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin: 16px 0;
+}
+.section-header .assurance-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.9;
+  filter: brightness(1.1);
+}
+.section-header .assurance-logo:hover { opacity: 1; }
 .section-header p {
   color: var(--text-dim);
   max-width: 560px;
@@ -764,6 +796,7 @@ img { max-width: 100%; display: block; }
   font-size: 0.9rem;
   margin-top: 8px;
   transition: all 0.3s;
+  animation: pulse-glow-blue 3s infinite;
 }
 .footer-facebook-cta:hover {
   background: #166fe5;
