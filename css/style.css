@@ -233,6 +233,14 @@ img { max-width: 100%; display: block; }
   gap: 5px;
   cursor: pointer;
   z-index: 1001;
+  position: relative;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
 }
 .burger span {
   width: 26px;
@@ -293,10 +301,15 @@ img { max-width: 100%; display: block; }
   margin: 0 auto;
   text-align: center;
   padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .hero h1,
 .hero p {
   text-align: center;
+  width: 100%;
+  max-width: 100%;
 }
 .hero-badge {
   display: inline-flex;
@@ -359,6 +372,7 @@ img { max-width: 100%; display: block; }
   justify-content: center;
   margin-bottom: 48px;
   animation: slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+  width: 100%;
 }
 
 /* Buttons */
@@ -973,7 +987,8 @@ img { max-width: 100%; display: block; }
   .hero p { text-align: center; }
 }
 @media (max-width: 600px) {
-  .container { padding: 0 20px; }
+  .container { padding: 0 20px; max-width: 100%; }
+  .hero .container { padding: 0 20px; }
   .hero-content { padding-left: 0; padding-right: 0; }
   .hero-badge { font-size: 0.75rem; padding: 6px 16px; flex-wrap: wrap; justify-content: center; text-align: center; }
   .stats-grid { grid-template-columns: 1fr 1fr; gap: 24px; text-align: center; }

@@ -2,13 +2,19 @@
  * depan.be - Script principal
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+function init() {
   initHeader();
   initMobileMenu();
   initContactForm();
   initActiveNav();
   initScrollReveal();
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
 
 // Animations au scroll - révèle les éléments à l'entrée dans le viewport
 function initScrollReveal() {
@@ -72,7 +78,14 @@ function initMobileMenu() {
     burger.setAttribute('aria-expanded', isOpen);
   }
 
-  burger.addEventListener('click', toggleMenu);
+  burger.addEventListener('click', (e) => {
+    e.preventDefault();
+    toggleMenu();
+  });
+  burger.addEventListener('touchstart', (e) => {
+    e.preventDefault();
+    toggleMenu();
+  }, { passive: false });
 
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {

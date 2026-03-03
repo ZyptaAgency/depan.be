@@ -5,7 +5,7 @@
   <path d="M12 32v28h40V32H12z" fill="#0d9488" opacity="0.85"/>
   <!-- Porte -->
   <rect x="26" y="44" width="12" height="16" rx="2" fill="#fefdfb"/>
-  <!-- Fenêtres -->
+  <!-- Fenï¿½tres -->
   <rect x="18" y="38" width="6" height="6" rx="1" fill="#fefdfb" opacity="0.95"/>
   <rect x="40" y="38" width="6" height="6" rx="1" fill="#fefdfb" opacity="0.95"/>
 </svg>
