@@ -289,15 +289,6 @@
     navbar.classList.toggle('scrolled', window.scrollY > 50);
   });
 
-  document.getElementById('burger')?.addEventListener('click', () => {
-    document.getElementById('navLinks').classList.toggle('open');
-  });
-  document.querySelectorAll('.nav-links a').forEach(a => {
-    a.addEventListener('click', () => {
-      document.getElementById('navLinks')?.classList.remove('open');
-    });
-  });
-
   window.addEventListener('scroll', () => {
     const scrollTop = window.scrollY;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
