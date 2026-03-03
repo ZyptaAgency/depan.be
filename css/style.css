@@ -909,21 +909,16 @@ img { max-width: 100%; display: block; }
 /* Responsive */
 .nav-overlay { display: none; }
 @media (max-width: 968px) {
-  .hero { padding-top: 90px; }
-  .hero-content { padding-top: 0.5rem; }
+  .hero { padding-top: 70px; }
+  .hero-content { padding-top: 0; }
   .nav-overlay { display: block; }
   .nav-links {
     display: none;
     flex-direction: column;
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--bg-dark);
+    inset: 0;
     align-items: center;
     justify-content: center;
-    gap: 12px;
     z-index: 999;
     padding: 24px;
     overflow-y: auto;
@@ -932,16 +927,41 @@ img { max-width: 100%; display: block; }
   .nav-links.open {
     display: flex;
   }
+  .nav-links.open::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: -1;
+  }
+  .nav-links.open {
+    background: transparent;
+  }
+  .nav-links.open {
+    background: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    max-width: 320px;
+    width: calc(100% - 48px);
+    box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+    gap: 8px;
+  }
+  .nav-links.open li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
   .nav-links.open a {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     color: var(--text);
-    padding: 16px 24px;
+    padding: 14px 20px;
     min-height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 260px;
     text-align: center;
     border-radius: 12px;
     transition: background 0.2s;
@@ -950,15 +970,15 @@ img { max-width: 100%; display: block; }
     background: rgba(255,255,255,0.08);
   }
   .nav-links.open .nav-facebook {
-    padding: 16px 24px;
-    font-size: 1.2rem;
+    padding: 14px 20px;
+    font-size: 1.15rem;
     justify-content: center;
   }
   .nav-links.open .nav-facebook-label { display: inline; }
   .nav-links.open .nav-facebook { color: var(--white) !important; }
   .nav-links.open .nav-cta {
-    font-size: 1.2rem;
-    padding: 16px 24px;
+    font-size: 1.15rem;
+    padding: 14px 20px;
     justify-content: center;
   }
   .burger {
@@ -1004,6 +1024,7 @@ img { max-width: 100%; display: block; }
 }
 @media (max-width: 600px) {
   .container { padding: 0 20px; max-width: 100%; }
+  .hero { padding-top: 65px; }
   .hero .container { padding: 0 20px; }
   .hero-content { padding-left: 0; padding-right: 0; }
   .hero-badge { font-size: 0.82rem; padding: 8px 20px; flex-wrap: wrap; justify-content: center; text-align: center; }
