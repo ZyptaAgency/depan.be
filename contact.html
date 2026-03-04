@@ -20,6 +20,9 @@
       <span class="nav-logo-brand">depan<span>.be</span></span><span class="sprl">SPRL</span>
     </a>
     <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="plomberie.html">Plomberie</a></li>
+      <li><a href="electricite.html">Électricité</a></li>
       <li><a href="index.html#services">Services</a></li>
       <li><a href="index.html#equipe">Équipe</a></li>
       <li><a href="avis.html">Avis</a></li>
@@ -40,6 +43,9 @@
 
 <section class="page-header">
   <div class="container">
+    <div id="contactSuccess" class="contact-success" style="display: none;">
+      Merci ! Votre message a bien été envoyé. Nous vous contacterons rapidement.
+    </div>
     <h1>Contactez-nous</h1>
     <p>Vous avez des questions ? Nous avons des réponses !</p>
   </div>
@@ -70,22 +76,25 @@
         </a>
         <p style="font-size: 0.9rem; color: var(--text-muted);">N° entreprise : BE 0717.949.260</p>
       </div>
-      <form class="contact-form" id="contactForm" action="mailto:info@depan.be" method="post" enctype="text/plain">
+      <!-- Remplacer YOUR_FORM_ID par l'ID Formspree (formspree.io) pour activer l'envoi sécurisé HTTPS -->
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="hidden" name="_subject" value="Nouveau message depuis depan.be">
+        <input type="hidden" name="_next" id="formNext" value="">
         <div class="form-group">
           <label for="name">Votre nom *</label>
-          <input type="text" id="name" name="name" required placeholder="Votre nom">
+          <input type="text" id="name" name="name" required placeholder="Votre nom" autocomplete="name">
         </div>
         <div class="form-group">
           <label for="phone">Votre téléphone</label>
-          <input type="tel" id="phone" name="phone" placeholder="0477 00 00 00">
+          <input type="tel" id="phone" name="phone" placeholder="0477 00 00 00" autocomplete="tel">
         </div>
         <div class="form-group">
           <label for="postal">Votre code postal *</label>
-          <input type="text" id="postal" name="postal" required placeholder="1000" pattern="[0-9]{4}">
+          <input type="text" id="postal" name="postal" required placeholder="1000" pattern="[0-9]{4}" autocomplete="postal-code">
         </div>
         <div class="form-group">
           <label for="email">Votre email *</label>
-          <input type="email" id="email" name="email" required placeholder="votre@email.be">
+          <input type="email" id="email" name="email" required placeholder="votre@email.be" autocomplete="email">
         </div>
         <div class="form-group">
           <label for="message">Votre question *</label>
@@ -159,6 +168,13 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script>
+  document.getElementById('formNext')?.setAttribute('value', location.origin + location.pathname + '?sent=1');
+  if (new URLSearchParams(location.search).get('sent') === '1') {
+    const el = document.getElementById('contactSuccess');
+    if (el) { el.style.display = 'block'; el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  }
+</script>
 <script>
   window.addEventListener('scroll', () => {
     const p = document.getElementById('scrollProgress');
