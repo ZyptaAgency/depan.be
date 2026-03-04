@@ -505,6 +505,14 @@ img { max-width: 100%; display: block; }
   max-width: 140px;
   object-fit: contain;
 }
+.marquee-brands__item--light {
+  padding: 8px 16px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 8px;
+}
+.marquee-brands__item--light img {
+  height: 32px;
+}
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
