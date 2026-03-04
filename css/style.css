@@ -831,10 +831,11 @@ img { max-width: 100%; display: block; }
   border: 1px solid rgba(26, 127, 168, 0.08);
 }
 .avis-google-badge .avis-google-logo {
-  height: 24px;
-  width: auto;
-  vertical-align: middle;
+  height: 20px;
+  width: 60px;
   flex-shrink: 0;
+  object-fit: contain;
+  aspect-ratio: auto;
 }
 .avis-google-badge--header {
   margin-top: 20px;
@@ -1453,6 +1454,28 @@ img { max-width: 100%; display: block; }
   .map-section { margin-top: 3rem; padding-top: 2rem; }
   .map-wrapper iframe,
   .map-wrapper--compact iframe { height: 280px; }
+}
+
+/* Page characters (service pages) */
+.page-characters {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(26, 127, 168, 0.08);
+}
+.page-char {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+.page-char-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text);
 }
 
 /* ========== ANIMATED SVG CHARACTERS ========== */
