@@ -821,7 +821,7 @@ img { max-width: 100%; display: block; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   margin-top: 16px;
   padding: 10px 20px;
   background: rgba(255,255,255,0.7);
@@ -831,11 +831,11 @@ img { max-width: 100%; display: block; }
   border: 1px solid rgba(26, 127, 168, 0.08);
 }
 .avis-google-badge .avis-google-logo {
-  height: 20px;
-  width: 60px;
+  height: 24px;
+  width: auto;
   flex-shrink: 0;
   object-fit: contain;
-  aspect-ratio: auto;
+  object-position: center;
 }
 .avis-google-badge--header {
   margin-top: 20px;
@@ -1461,8 +1461,8 @@ img { max-width: 100%; display: block; }
   display: flex;
   justify-content: center;
   gap: 3rem;
-  margin-bottom: 3rem;
-  padding-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid rgba(26, 127, 168, 0.08);
 }
 .page-char {
