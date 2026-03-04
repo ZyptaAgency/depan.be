@@ -832,10 +832,9 @@ img { max-width: 100%; display: block; }
 }
 .avis-google-badge .avis-google-logo {
   height: 24px;
-  width: auto;
+  width: 24px;
   flex-shrink: 0;
   object-fit: contain;
-  object-position: center;
 }
 .avis-google-badge--header {
   margin-top: 20px;
