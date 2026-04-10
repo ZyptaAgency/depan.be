@@ -1,5 +1,5 @@
 /* depan.be — Design inspiré du joli */
-@import url('https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;700;800;900&family=Orbitron:wght@700&family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;700;800;900&family=Orbitron:wght@700;800;900&family=Outfit:wght@300;400;500;600;700&display=swap');
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -1100,8 +1100,8 @@ img { max-width: 100%; display: block; }
   color: var(--orange-light);
 }
 .footer-credit .zypta-supernova {
-  font-family: 'Ethnocentric', 'Orbitron', sans-serif;
-  font-weight: 700;
+  font-family: 'Orbitron', system-ui, sans-serif;
+  font-weight: 800;
   letter-spacing: -0.02em;
   background: linear-gradient(135deg, #ff6b35, #c84bff, #00d4ff);
   -webkit-background-clip: text;
