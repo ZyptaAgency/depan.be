@@ -1100,8 +1100,8 @@ img { max-width: 100%; display: block; }
   color: var(--orange-light);
 }
 .footer-credit .zypta-supernova {
-  font-family: 'Orbitron', system-ui, sans-serif;
-  font-weight: 800;
+  font-family: 'Ethnocentric Rg', 'Orbitron', system-ui, sans-serif;
+  font-weight: 400;
   letter-spacing: -0.02em;
   background: linear-gradient(135deg, #ff6b35, #c84bff, #00d4ff);
   -webkit-background-clip: text;
